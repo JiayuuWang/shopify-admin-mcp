@@ -5,8 +5,10 @@ description = "Shopify Admin API MCP server with OAuth 2.0 authentication"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "dedalus-mcp>=0.1.0",
-    "httpx>=0.27.0",
+    "dedalus-mcp>=0.7.0",
+    "dedalus-labs>=0.2.0",
+    "python-dotenv>=1.0.0",
+    "httpx>=0.25.0",
 ]
 
 [project.optional-dependencies]

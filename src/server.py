@@ -1,7 +1,14 @@
+# Copyright (c) 2026 Dedalus Labs, Inc. and its contributors
+# SPDX-License-Identifier: MIT
+
 import os
 from dedalus_mcp import MCPServer
 from dedalus_mcp.server import TransportSecuritySettings
 from shopify import shopify, shopify_tools
+
+
+def _disable_auto_output_schemas(server: MCPServer) -> None:
+    server.tools._build_output_schema = lambda _fn: None
 
 
 def create_server() -> MCPServer:
@@ -16,5 +23,6 @@ def create_server() -> MCPServer:
 
 async def main() -> None:
     server = create_server()
+    _disable_auto_output_schemas(server)
     server.collect(*shopify_tools)
     await server.serve(port=8080)
