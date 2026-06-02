@@ -10,7 +10,7 @@ shopify = Connection(
     name="shopify",
     secrets=SecretKeys(access_token="SHOPIFY_ACCESS_TOKEN"),
     base_url="https://{shop}.myshopify.com/admin/api/2024-01",
-    auth_header_format="Bearer {access_token}",
+    auth_header_format="Bearer {api_key}",
 )
 
 ShopifyResult = list[Any]
