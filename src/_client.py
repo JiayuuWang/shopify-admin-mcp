@@ -112,7 +112,7 @@ async def main() -> int:
     from dedalus_labs import AsyncDedalus, DedalusRunner
     from dedalus_mcp.auth import SecretValues
 
-    creds = [SecretValues(_rebind(shopify, MCP_SERVER_SLUG), token=SHOPIFY_ACCESS_TOKEN)]
+    creds = [SecretValues(shopify, token=SHOPIFY_ACCESS_TOKEN)]
 
     client = AsyncDedalus(
         api_key=DEDALUS_API_KEY,
