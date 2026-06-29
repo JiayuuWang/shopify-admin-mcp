@@ -7,7 +7,7 @@ from dedalus_mcp.types import ToolAnnotations
 
 
 shopify = Connection(
-    name="JiayuWang-shopify-admin-mcp",
+    name="JiayuWang(王嘉宇)-shopify-admin-mcp",
     secrets=SecretKeys(token="SHOPIFY_ACCESS_TOKEN"),
     base_url="https://{shop}.myshopify.com/admin/api/2024-01",
     auth_header_format="Bearer {api_key}",
@@ -22,7 +22,7 @@ async def _graphql_req(query: str, variables: dict | None = None) -> ShopifyResu
     if variables:
         body["variables"] = variables
     resp = await ctx.dispatch(
-        "JiayuWang-shopify-admin-mcp",
+        "JiayuWang(王嘉宇)-shopify-admin-mcp",
         HttpRequest(method=HttpMethod.POST, path="/graphql.json", body=body),
     )
     if resp.success:
